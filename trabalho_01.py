@@ -54,7 +54,7 @@ class MainWindow(QMainWindow, Ui_MainWindow, buscaLargura, buscaProfundidade):
 		self.pushButton02.clicked.connect(self.limparCaminhada)
 
 		self.events()
-		self.timer.setInterval(300)
+		self.timer.setInterval(200)
 		self.timer.start()
 
 	#funcao que anima robo
@@ -142,42 +142,42 @@ class MainWindow(QMainWindow, Ui_MainWindow, buscaLargura, buscaProfundidade):
 		self.menuBar().addMenu(self.fileMenu)  
 
 	def aplicateColors(self): 
-		sleep(0.3)  
+		sleep(0.2)  
 		self.clear() 	
 		for i in range(len(self.labirinto)):
 			for j in range(len(self.labirinto)):
 				if(self.labirinto[i][j] == self.caminho or self.labirinto[i][j] == self.jaVisitado):
 					self.b1 = QPushButton("pushButton_"+str(i)+"_"+str(j))  
 					self.b1.setStyleSheet("background-color : white")
-					self.b1.setFixedSize(500/len(self.labirinto), 500/len(self.labirinto))
+					self.b1.setFixedSize(int(500/len(self.labirinto)), int(500/len(self.labirinto)))
 					self.b1.setText(" ")
 					self.b1.setEnabled(False)
 					self.gridLayout_3.addWidget(self.b1,i,j)
 				elif(self.labirinto[i][j] == self.paredes ):
 					self.b1 = QPushButton("pushButton_"+str(i)+"_"+str(j))  
 					self.b1.setStyleSheet("background-color : black")
-					self.b1.setFixedSize(500/len(self.labirinto), 500/len(self.labirinto))
+					self.b1.setFixedSize(int(500/len(self.labirinto)), int(500/len(self.labirinto)))
 					self.b1.setText(" ") 
 					self.b1.setEnabled(False) 
 					self.gridLayout_3.addWidget(self.b1,i,j)
 				elif(self.labirinto[i][j] == self.entrada ):
 					self.b1 = QPushButton("pushButton_"+str(i)+"_"+str(j))  
 					self.b1.setStyleSheet("background-color : red")  
-					self.b1.setFixedSize(500/len(self.labirinto), 500/len(self.labirinto))
+					self.b1.setFixedSize(int(500/len(self.labirinto)), int(500/len(self.labirinto)))
 					self.b1.setText(" ")
 					self.b1.setEnabled(False)
 					self.gridLayout_3.addWidget(self.b1,i,j)
 				elif(self.labirinto[i][j] == self.saida ):
 					self.b1 = QPushButton("pushButton_"+str(i)+"_"+str(j))  
 					self.b1.setStyleSheet("background-color : green")  
-					self.b1.setFixedSize(500/len(self.labirinto), 500/len(self.labirinto))
+					self.b1.setFixedSize(int(500/len(self.labirinto)), int(500/len(self.labirinto)))
 					self.b1.setText(" ")
 					self.b1.setEnabled(False)
 					self.gridLayout_3.addWidget(self.b1,i,j)
 				elif(self.labirinto[i][j] == self.pegadas ):
 					self.b1 = QPushButton("pushButton_"+str(i)+"_"+str(j))  
 					self.b1.setStyleSheet("background-color : yellow")  
-					self.b1.setFixedSize(500/len(self.labirinto), 500/len(self.labirinto))
+					self.b1.setFixedSize(int(500/len(self.labirinto)), int(500/len(self.labirinto)))
 					self.b1.setText(" ")
 					self.b1.setEnabled(False)
 					self.gridLayout_3.addWidget(self.b1,i,j)
